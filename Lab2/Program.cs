@@ -95,6 +95,20 @@ namespace Lab2
                 }
             }
         }
+
+        static IList<string> ImportWords(string path)
+        {
+            IList<string> words = new List<string>();
+
+            using (StreamReader reader = new StreamReader(path))
+            {
+                while (!reader.EndOfStream)
+                {
+                    words.Add(reader.ReadLine());
+                }
+            }
+            return words;
+        }
     }
 }
         
