@@ -16,7 +16,7 @@ namespace Lab2
 
             while (running)
             {
-                Console.WriteLine("\nMENU");
+                Console.WriteLine("\nMENU OPTION");
                 Console.WriteLine("1) Import Words from File");
                 Console.WriteLine("2) Bubble Sort words");
                 Console.WriteLine("3) LINQ Sort words");
