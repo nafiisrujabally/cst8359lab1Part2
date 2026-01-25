@@ -128,6 +128,20 @@ namespace Lab2
             }
             return sorted;
         }
+
+        static IList<string> LINQSort(IList<string> words)
+        {
+            return words.OrderBy(w => w).ToList();
+        }
+
+        static void TimeSort(Func<IList<string>> sortMethod, string name)
+        {
+            Stopwatch sw = Stopwatch.StartNew();
+            sortMethod();
+            sw.Stop();
+
+            Console.WriteLine($"{name} took {sw.ElapsedMilliseconds} ms");
+        }
     }
 }
         
