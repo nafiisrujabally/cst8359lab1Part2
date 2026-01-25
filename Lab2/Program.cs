@@ -29,7 +29,7 @@ namespace Lab2
                 Console.WriteLine("X) Exit");
                 Console.Write("Choose an option: ");
 
-                string option = Console.ReadLine();
+                string option = Console.ReadLine() ?? "";
 
                 try
                 {
@@ -104,7 +104,11 @@ namespace Lab2
             {
                 while (!reader.EndOfStream)
                 {
-                    words.Add(reader.ReadLine());
+                    string? sentence = reader.ReadLine();
+                    if (sentence != null)
+                    {
+                        words.Add(sentence);
+                    }
                 }
             }
             return words;
