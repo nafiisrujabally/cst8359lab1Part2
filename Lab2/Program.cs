@@ -109,6 +109,25 @@ namespace Lab2
             }
             return words;
         }
+
+        static IList<string> BubbleSort(IList<string> words)
+        {
+            List<string> sorted = new List<string>(words);
+
+            for (int i = 0; i < sorted.Count - 1; i++)
+            {
+                for (int j = 0; j < sorted.Count - i - 1; j++)
+                {
+                    if (string.Compare(sorted[j], sorted[j + 1]) > 0)
+                    {
+                        string temp = sorted[j];
+                        sorted[j] = sorted[j + 1];
+                        sorted[j + 1] = temp;
+                    }
+                }
+            }
+            return sorted;
+        }
     }
 }
         
